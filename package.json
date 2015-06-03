@@ -1,7 +1,7 @@
 {
   "name": "compute-isodd",
   "version": "0.0.0",
-  "description": " Computes for each array element whether it is an odd number. ",
+  "description": "Computes an element-wise is-odd check.",
   "author": {
     "name": "Philipp Burckhardt",
     "email": "pburckhardt@outlook.com"
@@ -25,12 +25,25 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "mathematics",
+    "math",
+    "array",
+    "odd",
+    "element-wise",
+    "accessor"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/isodd/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "utils-copy": "^1.0.0",
+    "validate.io-array": "^1.0.6",
+    "validate.io-boolean-primitive": "^1.0.0",
+    "validate.io-function": "^1.0.2",
+    "validate.io-number-primitive": "^1.0.0",
+    "validate.io-object": "^1.0.4"
+  },
   "devDependencies": {
     "chai": "2.x.x",
     "mocha": "2.x.x",
@@ -39,10 +52,5 @@
     "jshint": "2.x.x",
     "jshint-stylish": "^1.0.0"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "license": "MIT"
 }
