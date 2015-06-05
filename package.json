@@ -37,6 +37,7 @@
     "url": "https://github.com/compute-io/isodd/issues"
   },
   "dependencies": {
+    "dstructs-matrix": "^1.0.0",
     "utils-copy": "^1.0.0",
     "validate.io-array": "^1.0.6",
     "validate.io-boolean-primitive": "^1.0.0",

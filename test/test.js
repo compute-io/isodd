@@ -3,7 +3,7 @@
 
 // MODULES //
 
-var matrix = require( 'compute-matrix' );
+var matrix = require( 'dstructs-matrix' );
 
 var // Expectation library:
 	chai = require( 'chai' ),
@@ -140,12 +140,11 @@ describe( 'compute-isodd', function tests() {
 		var data, expected, results;
 
 		data = matrix( new Int8Array( [ 2, 4, 5, 3] ), [2,2] );
-		expected = matrix( new Int8Array( [0, 0, 1, 1] ), [2,2] );
 
 		results = isOdd( data );
+		expected = '0,0;1,1';
 
-		assert.strictEqual( results.length, expected.length );
-		assert.deepEqual( results, expected );
+		assert.strictEqual( results.toString(), expected );
 	});
 
 	it( 'should check whether elements in array are odd numbers using an accessor', function test() {
