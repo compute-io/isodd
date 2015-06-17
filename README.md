@@ -22,7 +22,7 @@ var isOdd = require( 'compute-isodd' );
 
 #### isOdd( x[, options] )
 
-Checks element-wise whether numbers in `x` are odd. The function accepts as its first argument either a single `numeric` value, an `array` or a `matrix`. For input `arrays` and `matrices`, the check is carried out for each value. Correspondingly, the function returns either a single number, an `array` with length equal to that of the input `array` or a `matrix` with equal dimensions as input `x`. Each output element is either `0` or `1`. A value of `1` means that an element is an odd number and `0` means that an element is __not__ an odd number.
+Checks element-wise whether numbers in `x` are odd. `x` may be either a [`number`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), an [`array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array), a [`typed array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays), or a [`matrix`](https://github.com/dstructs/matrix). For input `arrays` and `matrices`, the check is carried out for each value. Correspondingly, the function returns a single number, an `array` with length equal to that of the input `array` or a `matrix` with equal dimensions as input `x`. Each output element is either `0` or `1`. A value of `1` means that an element is an odd number and `0` means that an element is __not__ an odd number.
 
 ``` javascript
 var out = isOdd( 9 );
@@ -72,7 +72,32 @@ var out = isOdd( data, {
 // returns [ 1, 0, 1, 0, 1 ]
 ```
 
+In the case of matrices, the function returns an indicator matrix with the same dimensions as `x`:
 
+```javascript
+var matrix = require( 'dstructs-matrix' ),
+	data,
+	mat,
+	out;
+
+data = new Float64Array( 9 );
+for ( i = 0; i < 9; i++ ) {
+	data[ i ] = i + 1;
+}
+mat = matrix( data, [3,3], 'float64' );
+/*
+	[ 1 2 3
+	  4 5 6
+	  7 8 9 ]
+*/
+
+out = isOdd( mat );
+/*
+	[ 1 0 1
+	  0 1 0
+	  1 0 1 ]
+*/
+```
 
 ## Examples
 

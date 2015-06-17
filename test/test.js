@@ -28,7 +28,7 @@ describe( 'compute-isodd', function tests() {
 
 	it( 'should throw an error if provided an invalid input type', function test() {
 		var values = [
-				'5',
+			//	'5', // Strings are Array-like
 				{},
 				true,
 				null,
